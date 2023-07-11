@@ -1,0 +1,450 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    background: #8CC461;
+}
+
+/* Main container for header and Game Area */
+.container{
+    height: 90dvh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; 
+}
+
+/* Heading box for Title and Scores */
+#header{
+    height:158px;
+    width:800px;
+    display: flex;
+    justify-content: space-around;
+    margin-top:62px;
+    border-radius: 13px;
+    border: 2px solid #FFF;
+    background: rgba(28, 48, 120, 0.00);
+}
+
+.heading-text{
+    margin:15px;
+    width: 400px;
+    display: inline-block;
+}
+
+.heading-text p{
+    color: #FFF;
+    font-size: 40px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 4px;
+}
+.score-box{
+    padding:10px;
+    width: 139px;
+    height: 128px;
+    margin-top: 15px;
+    border-radius: 9px;
+    background: #FFF;
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: sans-serif;
+    letter-spacing: 1.4px;
+}
+
+#computer-score,#user-score{
+    color: #252525;
+    text-align: center;
+    font-size: 68px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+/* Controls Area */
+.controls-div{
+    margin-top: 70px;
+    top: 250px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;  
+}
+/* Controls  */
+.control,.user-choice,.pc-choice{
+    cursor: pointer;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* contols Border */
+.control-outer{
+    height: 115px;
+    width: 115px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.colour1{
+    background-color: #0074B6;
+}
+
+.colour2{
+   background-color:  #BD00FF;
+}
+
+.colour3{
+    background-color: #FFD600;
+}
+
+
+/* connecting lines */
+.line{
+    width:200px;
+    position: absolute;
+    top: 45px;
+    border-bottom: 14px solid rgba(0, 0, 0, 0.64);  
+}
+
+.pos1{
+    left: 60px;
+    transform: rotate(0deg);
+    transform-origin: left;
+}
+
+.pos2{
+    left:80px;
+    transform: rotate(-60deg);    
+    transform-origin: right;
+}
+  
+.pos3{
+    left: 40px;      
+    transform: rotate(55deg);
+    transform-origin: left;
+} 
+
+/* Rows for aligning controls */
+.row1{
+    display: flex;
+    gap: 100px;
+}
+
+.row2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 75px;
+}
+
+/* Rules box */
+.rules-div{
+    margin-left: 1160px;
+    margin-top: 70px;
+    top: 250px;
+    height: 300px;
+    width: 260px;
+    border-radius: 13px;
+    border: 7px solid #FFF;
+    background: #004429;
+    position: absolute;
+    padding: 20px;
+}
+
+.rules-heading{
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+    color: #FFF;
+    font-size: 29px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.rules-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.rules-list li {
+    padding-left: 25px;
+    position: relative;
+    margin-bottom: 12px;
+    color: white;
+
+}
+
+.rules-list li:before {
+    content: "\25A0";
+    color: yellow;
+    position: absolute;
+    left: 0;
+    top: 3px;
+}
+/* Rules close button */
+.close{
+    height: 48px;
+    width: 44px;
+    background-color: red;
+    color: #FFF;
+    border: 5px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    top: -30px;
+    left: 270px;
+    z-index: 10;
+    cursor: pointer; 
+}
+
+.close h1{
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 44px;
+}
+
+/* Result Area */
+.result{
+    margin-top: 100px;
+    height:330px;
+    display: grid;
+    grid-template-columns: 350px 235px 350px;
+    place-items:center; 
+}
+/* columns for aligning results */
+.column1,.column2{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 35px;
+}
+.user-outer,.pc-outer{
+    height: 115px;
+    width: 115px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.user-outer.active {
+    box-shadow: 0 0 0 55px rgb(39,155,39), 0 0 0 75px rgb(50,166,47), 0 0 0 90px rgb(102,178,72);
+}
+
+.pc-outer.active {
+    box-shadow: 0 0 0 55px rgb(39,155,39), 0 0 0 75px rgb(50,166,47), 0 0 0 90px rgb(102,178,72);
+}
+
+
+.pick-message{
+    position: relative;
+    display: flex;
+    width: 113px;
+    height: 16px;
+    flex-direction: column;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1.7px;
+    z-index: 10;
+}
+
+.message-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.winlose-message{
+    color: #FFF;
+    text-align: center;
+    font-size: 39px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 3.9px;
+    text-transform: uppercase;
+}
+
+.against-pc-text{
+    position:absolute;
+    color: #FFF;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 2.5px;
+    margin-top: 35px;
+    text-transform: uppercase;
+}
+.tie-message{
+    position:absolute;
+    color: #FFF;
+    text-align: center;
+    font-size: 39px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 3.9px;
+}
+
+.play-again{
+    border-radius: 9px;
+    background: #FFF;
+    width: 174px;
+    height: 44px;
+    letter-spacing: 0.1rem;;
+    transform : translateY(50px);
+}
+
+/* Footer for Rules and Next buttons */
+footer{
+    margin-top: 15px;
+    padding-right: 40px;
+    display: flex;
+    justify-content: flex-end;
+    height: 60px;
+    gap:30px
+}
+#rules-button {
+    border-radius: 10px;
+    border: 2px solid #FFF;
+    background: rgba(217, 217, 217, 0.00); 
+    width: 119px;
+    height: 40px;
+    color: #FFF;
+    display: grid;
+    place-items: center;
+    color: #FFF;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.1px;
+    text-transform: capitalize;
+    cursor: pointer;
+
+}
+#next-button{
+    border-radius: 10px;
+    border: 2px solid #FFF;
+    background: rgba(217, 217, 217, 0.00); 
+    width: 119px;
+    height: 40px;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.1px;
+    text-transform: capitalize;
+    cursor: pointer;
+    display: none;
+    padding-top: 5px;
+    box-sizing: border-box;
+}
+
+.hidden{
+    display: none;
+ }
+ /* congrats page */
+
+ .congrats-conatiner{
+    height: 80dvh;
+    width:  70dvw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+  
+   .cup{
+    position: relative;
+    bottom: 200px;
+  }
+  
+  .stars-cup{
+    display: grid;
+    place-items: center;
+    align-items: center;
+    position: relative;
+    top: 100px;
+  }
+  
+  .hurray,.won {
+    display: grid;
+    place-items: center;
+    margin: 25px;
+    position: relative;
+    bottom: 80px;
+  }
+  
+  #play-again2{
+    position: relative;
+    bottom: 150px;
+    text-decoration: none;
+    color: grey;
+    border: 2px solid white;
+    border-radius: 10px;
+    line-height: 40px;
+    width: 200px;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: grid;
+    place-items: center;
+    left: 660px;
+    bottom: 70px
+}
+
+a{
+    text-decoration: none;
+    color: #FFF;
+}
+ 
+
+#confetti{
+    position: fixed;
+    width: 100%;
+    height: 300px;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+    pointer-events: none;
+    top:600px;
+}

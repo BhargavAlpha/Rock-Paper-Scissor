@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Container for heading and Game Controls Area -->
+    <div class="container">
+   <div id="header">
+        <div class="heading-text">
+            <p>ROCK</p>
+            <p>PAPER</p>
+            <p>SCISSORS</p>
+        </div>
+        <div class="score-box">
+            <p>COMPUTER</p>
+            <P>SCORE</P>
+            <span id="computer-score">0</span>
+        </div>
+        <div class="score-box">
+            <p>YOUR</p>
+            <P>SCORE</P>
+            <span id="user-score">0</span>
+        </div>
+   </div>
+   <!-- Game Controls Area -->
+   <div class="controls-div">
+    <div class="line pos1"></div>
+    <div class="line pos2"></div>
+    <div class="line pos3"></div>
+     <div class="row1">
+        <div class="control-outer colour1">
+            <div class="control" id="rock-control">
+                <img src="./icons/icons8-fist-67 1.png"  alt="rock" >
+            </div>
+        </div>
+        <div class="control-outer colour2 ">
+            <div class="control" id="paper-control">
+                <img src="./icons/icons8-hand-64 1.png"  alt="paper" >
+            </div>
+        </div>
+     </div>
+     <div class="row2">
+        <div class="control-outer colour3 ">
+            <div class="control" id="scissor-control">
+                <img src="./icons/17911 1.png"  alt="scissor" >
+            </div>
+        </div>
+     </div>
+   </div>
+   <!-- Result Container -->
+   <div class="result hidden">
+    <div class="column1">
+        <div class="pick-message">You Picked</div>
+        <div class="user-outer rounded-gradient-borders">
+            <div class="user-choice "></div>
+        </div>   
+    </div>
+    <div class="message-container ">  
+       <p class="winlose-message">you win</p> 
+       <p class="against-pc-text">AGAINST PC</p>
+       <p class="tie-message hidden"> TIE UP</p>
+       <button class="play-again">PLAY AGAIN</button>
+    </div>
+    <div class="column2">
+        <div class="pick-message">Pc Picked</div>
+        <div class="pc-outer rounded-gradient-borders">
+            <div class="pc-choice "></div>
+        </div>
+       
+    </div>  
+   </div>
+    </div>
+    <!-- Rules Container -->
+    <div class="rules-container">   
+     <div class="rules-div hidden">
+        <div class="close">
+            <h1>x</h1>
+        </div>
+        <div>
+            <p class="rules-heading">Game Rules</p>
+            <ul class="rules-list">
+                <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                <li>Agree ahead of time whether you'll count off "rock, paper, scissors, shoot" or "rock, paper, scissors."</li>
+                <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+                <li>If both players lay down the same hand, each player lays down another hand.</li>
+            </ul>
+        </div>
+     </div>
+    </div>
+
+    <footer>
+        <div id="rules-button">Rules</div>
+        <div id="next-button"><a href="congrats.html">Next</a>
+            </div>
+    </footer>
+   
+    <script src="script.js"></script>
+</body>
+</html>

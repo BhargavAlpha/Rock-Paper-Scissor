@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Congrats</title>
+</head>
+<body>
+    <div class="congrats-container">
+        <div class="stars-cup">
+            <img src="./symbols/stars.png" alt="">
+            <div class="cup">
+                <img src="./symbols/cup.png" alt="">
+            </div>
+        </div>
+        <div class="hurray">
+            <img src="./symbols/hurraytext.png" alt="">
+        </div>
+        <div class="won">
+            <img src="./symbols/wontext.png" alt="">
+        </div>
+        <div class="play-again2" id="play-again2">
+            <a href="index.html">Play Again</a>
+        </div>
+        </div>
+        <div class="rules-div hidden">
+            <div class="close">
+                <h1>x</h1>
+            </div>
+            <div>
+                <p class="rules-heading">Game Rules</p>
+                <ul class="rules-list">
+                    <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                    <li>Agree ahead of time whether you'll count off "rock, paper, scissors, shoot" or "rock, paper, scissors."</li>
+                    <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+                    <li>If both players lay down the same hand, each player lays down another hand.</li>
+                </ul>
+            </div>
+         </div>
+         <canvas id="confetti"></canvas>
+         <footer>
+            <div id="rules-button" >Rules</div>
+         </footer>
+         <canvas id="confetti"></canvas>
+         
+        
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <script>
+        const closeBtn=document.querySelector('.close');
+        const rulesBtn=document.getElementById('rules-button');
+        const rulesDiv=document.querySelector('.rules-div');
+        rulesBtn.addEventListener("click",function(){
+            rulesDiv.classList.toggle('hidden');  
+        });
+        closeBtn.addEventListener("click",function(){
+            rulesDiv.classList.toggle('hidden');
+        });
+        const canvas = document.querySelector('#confetti');
+        function celebrationAnimation(){
+        const jsConfetti = new JSConfetti();
+        jsConfetti.addConfetti({
+        emojis: [ ],
+        }).then(() => jsConfetti.addConfetti());
+       }
+       celebrationAnimation();
+        
+    </script>
+</body>
+</html> 
